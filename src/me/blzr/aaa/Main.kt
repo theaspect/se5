@@ -1,5 +1,11 @@
 package me.blzr.aaa
 
 fun main(args: Array<String>) {
-    println("Hello World")
+    if (args.isEmpty()) {
+        println("No Args!!!")
+    }else{
+        for (arg in args) {
+            println(arg)
+        }
+    }
 }
