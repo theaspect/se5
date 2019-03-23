@@ -1,15 +1,18 @@
 package me.blzr.aaa
 
 fun main(args: Array<String>) {
-    if (args.isEmpty()) {
-        println("No Args!!!")
-        System.exit(0)
-    } else if (args.size == 1) {
-        System.exit(1)
-    } else if (args.size == 2) {
-        System.exit(2)
-    } else {
-        args.forEach { println(it) }
-        System.exit(100)
+    val status: Int
+    when {
+        args.isEmpty() -> {
+            println("No Args!!!")
+            status = 0
+        }
+        args.size == 1 -> status = 1
+        args.size == 2 -> status = 2
+        else -> {
+            args.forEach { println(it) }
+            status = 100
+        }
     }
+    System.exit(status)
 }
